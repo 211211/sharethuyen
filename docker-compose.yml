@@ -1,0 +1,49 @@
+db:
+  image: postgres:9.6 # Heroku PostgreSQL Version
+  ports:
+    - "5432:5432" # Bind host port 5432 to PostgreSQL port 5432
+  volumes_from:
+    - dbdata
+  environment:
+    LC_ALL: C.UTF-8
+    POSTGRES_PASSWORD: HowCanYouGuess
+
+dbdata:
+  image: postgres:9.6
+  command: /bin/echo PostgreSQL Data Container
+
+redis:
+  image: redis
+
+cache:
+  image: memcached
+
+web:
+  build: .
+  dockerfile: Dockerfile.dev
+  command: yarn run dev -s all
+  ports:
+    - "8080:8080"
+    - "8079:8079"
+  volumes:
+    - .:/rails
+  env_file: .env.web
+  links:
+    - db
+    - redis
+    - cache
+
+worker:
+  build: .
+  dockerfile: Dockerfile.dev
+  entrypoint: /rails/entry.sh
+  volumes:
+    - .:/rails
+  env_file: .env.web
+  environment:
+    SECRET_KEY_BASE: abcdefg
+    RAILS_ENV: development
+  links:
+    - db
+    - redis
+    - cache

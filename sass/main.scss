@@ -1,0 +1,289 @@
+@import "variables";
+@import "~@sketchpixy/rubix/sass/rubix";
+@import "~@sketchpixy/rubix/sass/vendor";
+@import "~react-bootstrap-table/dist/react-bootstrap-table-all.min";
+@import "colors";
+@import "theme";
+@import 'lib/react-select.css';
+@import 'lib/react-datepicker.css';
+@import 'lib/jquery.growl.css';
+@import 'lib/react-toggle.css';
+@import 'lib/form-builder.css';
+@import 'lib/jquery.fileupload';
+@import 'lib/jquery.fileupload-ui';
+@import 'lib/scheduler';
+@import 'lib/jquery-editable';
+@import 'lib/tip-yellowsimple';
+
+@import "fonts/lato/lato";
+@import "fonts/fontello/fontello";
+@import "fonts/climacons/climacons";
+@import "fonts/devicon/devicon";
+@import "fonts/dripicons/dripicons";
+@import "fonts/feather/feather";
+@import "fonts/flatline/flatline";
+@import "fonts/mfizz/mfizz";
+@import "fonts/nargela/nargela";
+@import "fonts/glyphicons/glyphicons";
+@import "fonts/ikons/ikons";
+@import "fonts/outlined/outlined";
+@import "fonts/pixelvicon/pixelvicon";
+@import "fonts/Simple-Line-Icons/Simple-Line-Icons";
+@import "fonts/Stroke-Gap-Icons/Stroke-Gap-Icons";
+
+@import "~react-trumbowyg/dist/trumbowyg";
+
+/* Page styles */
+@import "pages/home";
+@import "pages/auth";
+@import "pages/boat";
+@import "pages/boat_amenity";
+@import "pages/boat_class";
+@import "pages/user";
+@import "pages/booking";
+@import "pages/membership";
+@import "pages/user-side";
+@import "pages/card";
+@import "component";
+
+.boat-amenity-select-item {
+  margin-bottom: 2px;
+
+  .boat-amenity-icon {
+    max-width: 17px;
+    margin-right: 7px;
+  }
+}
+
+/*
+ * Custom Select library to have
+ * rubix style.
+ */
+.Select .Select-control {
+  color: #444;
+  height: 30px;
+  box-shadow: none !important;
+  border-width: 2px;
+  letter-spacing: 0.5px;
+  border-color: #ddd;
+  border-radius: 0 !important;
+}
+
+.error .Select .Select-control {
+  border-color: #a94442;
+}
+
+.Select-menu-outer {
+  z-index: 10;
+}
+
+.Select .select-item {
+  margin-bottom: 2px;
+}
+
+/*
+ * Disable all action for loading component
+ */
+.is-loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/*
+ * Validation
+ */
+.req-field,
+label.error,
+.required {
+  color: #a94442;
+}
+
+input.form-control.error {
+  border-color: #a94442;
+}
+
+/*
+ * Form
+ */
+.section-form-title {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 15px;
+  margin-top: 40px;
+}
+
+.section-border-top {
+  border-top: 1px dashed #ccc;
+  padding-top: 15px;
+}
+
+.no-margin-form {
+  .form-group {
+    margin-bottom: 0px;
+  }
+}
+
+/*
+ * Utility
+ */
+.img-circle {
+  border-radius: 100px;
+}
+
+/*
+ * Fix rubix hide react-select dropdown list
+ */
+.container-overflow-visible .rubix-panel-container {
+  overflow: visible;
+}
+
+/*
+ * Fix react-datepicker using em measurement
+ */
+.react-datepicker {
+  font-size: 1em;
+}
+.react-datepicker__header {
+  padding-top: 0.8em;
+}
+.react-datepicker__month {
+  margin: 0.4em 1em;
+}
+.react-datepicker__day-name, .react-datepicker__day {
+  width: 1.9em;
+  line-height: 1.9em;
+  margin: 0.166em;
+}
+.react-datepicker__current-month {
+  font-size: 1em;
+}
+.react-datepicker__navigation {
+  top: 1em;
+  line-height: 1.7em;
+  border: 0.45em solid transparent;
+}
+.react-datepicker__navigation--previous {
+  border-right-color: #ccc;
+  left: 1em;
+}
+.react-datepicker__navigation--next {
+  border-left-color: #ccc;
+  right: 1em;
+}
+
+/*
+ * Override growls position
+ */
+#growls.default {
+  top: 70px;
+  right: 22px;
+}
+
+/*
+ * Override form builder
+ */
+.form-builder .form-group {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.form-builder label,
+.fb-checkbox label,
+.radio-group label,
+.form-builder .checkbox,
+.fb-checkbox .checkbox  {
+  display: inline-block;
+}
+
+.endorsement-form .checkbox-group label,
+.endorsement-form label.fb-checkbox-label {
+  display: inline-block;
+}
+
+.form-builder-dialog {
+  /* 1030 is z-index of .navbar-fixed-top */
+  z-index: 1031;
+}
+
+.form-builder-overlay {
+  z-index: 101;
+}
+
+.form-builder .form-field {
+  border-bottom: 1px solid #89949B;
+}
+
+.form-builder {
+  .checkbox-field, .text-field {
+    .value-wrap {
+      display: none;
+    }
+  }
+}
+
+/*
+ * TODO: Rubix use css of fullcalendar v2.1.0-beta2
+ * Need to override
+ */
+.fc-event:hover, .fc-event:focus {
+  padding: 2px 0px !important;
+}
+
+
+/*
+ * Override react-datepicker style
+ * to have rubix style
+ */
+.react-datepicker__input-container input {
+  color: #444;
+  height: 30px;
+  padding: 0 12px;
+  box-shadow: none !important;
+  border: 1px solid #ccc;
+  border-width: 2px;
+  letter-spacing: 0.5px;
+  border-radius: 0 !important;
+  border-color: #ddd;
+}
+
+.additional-payment-container {
+  margin-left: 6px;
+
+  .additional-payment {
+    border-left: 1px solid #ddd;
+    padding-left: 30px;
+    margin-top: 10px;
+  }
+}
+
+.rubix-panel-body {
+  padding-bottom: 20px;
+}
+
+.page-header {
+  margin-top: 5px;
+
+  h3 {
+    margin: 0;
+  }
+}
+
+#card-wrapper {
+  margin-bottom: 40px;
+}
+
+/**
+ * Set this, so data is not hidden
+ * Ex. the filter dropdown in booking table.
+ **/
+.rubix-panel-container {
+  overflow: visible;
+}
+
+/**
+ * Workaround to fix datepicker popup position in dashboard screen
+ */
+.bs-dashboard-screen {
+  .react-datepicker-popper, .react-datepicker__triangle {
+    margin-left: 173px;
+  }
+}

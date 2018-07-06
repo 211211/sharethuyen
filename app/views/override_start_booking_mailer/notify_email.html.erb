@@ -1,0 +1,22 @@
+<h1>Hi Admin,</h1>
+<p>
+  Booking <%= link_to "##{@booking.id}", admin_booking_url(id: @booking.id) %> has been started with admin override
+</p>
+<p>
+  Missing item(s):
+</p>
+<ul>
+  <% @red_flags.each do |red_flag| %>
+    <li>
+      <% if red_flag == "need_security_deposit" %>
+        <%= link_to "Need to pay security deposit", edit_admin_user_url(id: @booking.user.id) %>
+      <% elsif red_flag == "need_wa_state_marine_photo" %>
+        <%= link_to "Need to add WA State Boaters card", endorsement_admin_user_url(id: @booking.user.id) %>
+      <% elsif red_flag == "need_driver_license_photo" %>
+        <%= link_to "Need to add Driver License", endorsement_admin_user_url(id: @booking.user.id) %>
+      <% elsif red_flag == "need_field_required" %>
+        <%= link_to "Need to finish all required fields in Endorsement list", endorsement_admin_user_url(id: @booking.user.id) %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

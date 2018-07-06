@@ -1,0 +1,19 @@
+<div style="text-align: center">
+  <%= email_image_header %>
+</div>
+<h4>Hi <%=Setting.site_name%></h4>
+<p>There is a new lesson booking. Details of there booking are below:</p>
+<p>
+  Member Name: <%= @user.full_name %>
+  <br>
+  Member Phone: <%= @user.phone %>
+  <br>
+  Member Email: <%= @user.email %>
+  <br>
+  Lesson Type: <%= @lesson.name %>
+  <br>
+  Preferred Date: <%= @date %>
+</p>
+
+<p>Cheers<br>
+  From The Team at <%=Setting.site_name%></p>

@@ -1,0 +1,24 @@
+default: &default
+  adapter: postgresql
+  pool: 5
+  username: postgres
+  password: <%= ENV["DB_ENV_POSTGRES_PASSWORD"] %>
+  host: <%= ENV["DB_PORT_5432_TCP_ADDR"] %>
+  port: <%= ENV["DB_PORT_5432_TCP_PORT"] %>
+
+development:
+  <<: *default
+  database: <%= ENV["APP_NAME"] %>_development
+
+test:
+  <<: *default
+  database: <%= ENV["APP_NAME"] %>_test
+
+production:
+  <<: *default
+  pool: 25
+  database: <%= ENV["APP_NAME"] %>_production
+
+staging:
+  <<: *default
+  database: <%= ENV["APP_NAME"] %>_staging

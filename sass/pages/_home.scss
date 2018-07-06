@@ -1,0 +1,94 @@
+.home-actions {
+  display: flex;
+  justify-content: space-around;
+
+  img.action-icon {
+    max-width: 150px;
+
+    @media (min-width: $screen-md-min) {
+      max-width: 200px;
+    }
+  }
+
+  a {
+    margin: 0 20px;
+
+    @media (max-width: $screen-xs-max) {
+      margin: 0 5px;
+    }
+  }
+}
+
+.before-doing {
+  h5 {
+    text-transform: uppercase;
+    font-style: italic;
+
+    .red {
+      color: red;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+
+    a {
+      text-decoration: underline;
+    }
+  }
+}
+
+.before-book-lesson {
+  text-align: center;
+
+  @media (min-width: $screen-sm-min) {
+    text-align: right;
+  }
+}
+
+.before-book-boat {
+  &.col-sm-offset-3 {
+    text-align: center;
+  }
+  
+  @media (max-width: $screen-xs-max) {
+    text-align: center;
+    border-top: 1px solid #eee;
+  }
+}
+
+.contact-user-balance {
+  .nav-links {
+    text-align: center;
+
+    a {
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+
+    @media (min-width: $screen-sm-min) {
+      text-align: left;
+    }
+
+    a.book-a-lesson, a.contact-btn {
+      @media (max-width: $screen-xs-max) {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .user-balance {
+    text-align: center;
+    margin-top: 10px;
+
+    @media (min-width: $screen-sm-min) {
+      margin-top: 0;
+      text-align: right;
+    }
+
+    button.btn-lg {
+      white-space: normal;
+    }
+  }
+}

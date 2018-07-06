@@ -1,0 +1,9 @@
+<h1>Hi Admin,</h1>
+<p>
+  Below boats will be back from yard on <%= @back_date %>
+</p>
+<p>
+  <% @boats.each do |boat| %>
+    <p><%= link_to boat[:name], edit_admin_boat_url(id: boat[:id]) %></p>
+  <% end %>
+</p>

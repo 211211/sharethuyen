@@ -1,0 +1,34 @@
+FROM donnguyen/ruby-docker:2.5
+
+RUN gem install bundler --no-ri --no-rdoc
+
+# Cache bundle install
+WORKDIR /tmp
+ADD Gemfile      /tmp/
+ADD Gemfile.lock /tmp/
+RUN bundle install --without development test
+
+# Add rails project to project directory
+ADD ./ /rails
+
+# set WORKDIR
+WORKDIR /rails
+
+# This is juts a trick to update /bundle/config
+# So Bundle.Setup can work as expected
+RUN cp /tmp/.bundle/config /rails/.bundle/config
+
+# This is for building images only
+ENV SECRET_KEY_BASE=please_enter_here
+ENV S3_ACCESS_KEY=please_enter_here
+ENV S3_SECRET_ACCESS_KEY=please_enter_here
+ENV AWS_REGION=please_enter_here
+ENV S3_BUCKET_NAME=please_enter_here
+
+RUN bundle exec rake assets:precompile RAILS_ENV=production
+
+# Cleanup
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/*
+
+# Publish port 8080
+EXPOSE 8080

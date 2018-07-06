@@ -1,0 +1,66 @@
+.user-card-simple {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  position: relative;
+
+  .user-card-detail {
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute;
+    padding-left: 55px;
+    width: 100%;
+    left: 0;
+
+    .user-name, .user-detail {
+      width: 100%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space:nowrap;
+    }
+  }
+
+  .remove-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.sharepass-type-box {
+  border: 1px solid #ddd;
+  border-top: none;
+}
+
+ul.nav-pills {
+  li {
+    @media (max-width: $screen-sm-max) {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.share-member-item {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #EEEEEE;
+  padding-bottom: 5px;
+  height: 35px;
+  display: flex;
+  display: -webkit-flex;
+
+  .member-email {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 35px;
+    flex-grow: 1;
+  }
+
+  .member-status {
+    min-width: 50px;
+    line-height: 35px;
+    flex-basis: content;
+  }
+
+  .member-buttons {
+    flex-basis: content;
+  }
+}

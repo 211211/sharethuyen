@@ -1,0 +1,202 @@
+/**
+ * Boatshare filter on top of datatable
+ */
+.bs-datatable-filter {
+  position: relative;
+
+  // z-index to 1 to make sure filter not hidden by table
+  z-index: 1;
+  .bs-right {
+    position: absolute;
+    right: 0;
+    display: flex;
+  }
+  label {
+    color: #555;
+  }
+  .bs-search {
+    display: inline-block;
+    width: 150px;
+    margin-left: 8px;
+  }
+}
+
+/**
+ * Boatshare booking status filter
+ */
+.bs-booking-status-filter {
+  display: flex;
+  height: 30px;
+  border: 2px solid #ddd;
+  margin-right: 20px;
+  .filter-select {
+    color: #555;
+    font-weight: bold;
+    align-self: center;
+    padding: 0 8px;
+    padding-right: 22px;
+    width: 118px;
+    cursor: pointer;
+  }
+  .filter-options {
+    list-style: none;
+    position: absolute;
+    top: 30px;
+    background: #fff;
+    background: #fff;
+    width: 122px;
+    padding: 2px 5px;
+    border: 2px solid #ddd;
+    top: 28px;
+    left: 0px;
+  }
+  .rubix-icon {
+    position: absolute;
+    top: 0;
+  }
+}
+
+.bs-tooltipevent {
+  position: absolute;
+  z-index: 10001;
+  max-width: 250px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background-color: #fff;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+/**
+ * Boatshare fuel indicator used in boat card
+ */
+.bs-fuel-indicator {
+  display: flex;
+  height: 8px;
+  .fuel-bar {
+    flex: 1;
+    background-color: rgb(170, 170, 170);
+    margin: 0 1px;
+
+    &.active {
+      background-color: rgb(119, 242, 86);
+    }
+  }
+}
+
+/**
+ * Boatshare boat card
+ * Used in boat listing page
+ */
+.bs-boat-card {
+  .container-fluid {
+    padding: 0 15px;
+  }
+  .footer-btn-group {
+    margin-bottom: 10px;
+  }
+}
+
+.image-preview {
+  img {
+    max-height: 150px;
+    padding: 10px 0 20px 0;
+  }
+}
+
+.trumbowyg-box {
+  border: 1px solid #DDD !important;
+}
+.bs-user-booking-notes {
+  .booking-note-row {
+    display: flex;
+    padding: 0 25px;
+    .booking-id {
+      flex: 0.3;
+      text-align: center
+    }
+    .booking-note {
+      flex: 0.7;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 15px;
+      p {
+        white-space: pre-wrap;
+      }
+    }
+    .note-content {
+      margin-left: 15px;
+    }
+    .note-type-label {
+      font-weight: bold;
+    }
+  }
+  .booking-note-header {
+    display: flex;
+    font-weight: bold;
+
+    .booking-id {
+      flex: 0.3;
+      text-align: center
+    }
+    .booking-note {
+      flex: 0.7;
+      text-align: center
+    }
+  }
+}
+
+.bs-user-notes {
+
+  .added-note-item {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 15px;
+    position: relative;
+
+    // To make it aligned nicely with bootstrap control's label
+    padding-top: 3px;
+
+    .added-time {
+      text-align: right;
+      font-size: 13px;
+    }
+
+    p {
+      white-space: pre-wrap;
+    }
+
+    .remove-btn {
+      position: absolute;
+      bottom: 30px;
+      right: 10px;
+      display: none;
+    }
+
+    &:hover {
+      .remove-btn {
+        display: block;
+      }
+    }
+  }
+}
+
+.bs-license-photo {
+  .photo-wrap {
+    position: relative;
+    width: 200px;
+
+    &:hover {
+      .remove-btn {
+        display: block;
+      }    
+    }
+  }
+
+  .remove-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 70px;
+    display: none;
+  }
+}

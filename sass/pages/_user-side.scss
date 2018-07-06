@@ -1,0 +1,128 @@
+.user-side-btn.btn {
+  border-radius: 0px;
+}
+
+html.default body {
+  #rubix-nav-header .navbar-nav > li.active > a,
+  #rubix-nav-header .navbar-nav > li > a {
+    font-size: 20px;
+  }
+}
+
+.section-header {
+  margin-bottom: 40px;
+}
+
+.lessons {
+  list-style: none;
+  padding-left: 0;
+
+  .lesson {
+    border-top: 1px solid #ddd;
+    padding: 30px 0;
+
+    .price {
+      font-size: 18px;
+      font-weight: bold;
+      margin-right: 30px;
+      color: #09456c;
+    }
+  }
+}
+
+.lesson-price {
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 30px;
+  color: #09456c;
+}
+
+
+#header-user-side {
+  .header-menu {
+    font-size: 14px;
+
+    li {
+      &.welcome-user {
+        margin-left: 12px;
+        margin-right: 12px;
+      }
+
+      a {
+        text-transform: uppercase;
+
+        @media (min-width: 990px) {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+      }
+    }
+  }
+}
+
+.home-welcome {
+  color: #08456c;
+
+  .home-welcome-title {
+    text-align: center;
+    text-transform: uppercase;
+    background: #08456c;
+
+    h4 {
+      color: #87d1da;
+      font-size: 17px;
+    }
+  }
+}
+
+.license-img, .profile-picture {
+  text-align: center;
+
+  img {
+    @media (max-width: $screen-sm-max) {
+      max-width: 50%;
+    }
+  }
+}
+
+.user-side-redflag {
+
+  .flag-item {
+    color: #2EB398;
+
+    a {
+      text-decoration: underline;
+    }
+  }
+}
+
+.weekend-bookings {
+  span.weekend-booking-available, span.weekend-booking {
+    border: 1px solid #DDD;
+    padding: 0 5px;
+    margin: 0 5px;
+    color: #5cb85c;
+    min-width: 90px;
+    display: inline-block;
+    text-align: center;
+  }
+
+  span.weekend-booking {
+    color: #428bca;
+  }
+}
+
+@media (max-width: $screen-sm-max) {
+  table.dataTable.nowrap th, table.dataTable.nowrap td {
+    white-space: normal;
+  }
+}
+
+.renewal-message {
+  background: #08456c;
+  color: white;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  white-space: pre-line;
+}

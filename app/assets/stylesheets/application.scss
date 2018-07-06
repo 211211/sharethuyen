@@ -1,0 +1,172 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require 'bootstrap-sortable'
+ */
+
+.inventory {
+  .boat-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .clickable-row {
+    cursor: pointer;
+  }
+
+  h1.fleet-status {
+    overflow: hidden;
+    text-align: center;
+    color: #000;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    font-weight: bold;
+
+    &:before, &:after {
+      background-color: transparent;
+      content: "";
+      display: inline-block;
+      height: 5px;
+      position: relative;
+      vertical-align: middle;
+      width: 50%;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+    }
+
+    &:before {
+      right: 0.5em;
+      margin-left: -50%;
+    }
+
+    &:after {
+      left: 0.5em;
+      margin-right: -50%;
+    }
+  }
+
+  .guide {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 17px;
+  }
+
+  .table {
+    td {
+      word-wrap: break-word;
+    }
+
+    thead {
+      background-color: #FFF;
+
+      &.tableFloatingHeaderOriginal {
+        border-top: 1px solid #ddd;
+      }
+    }
+  }
+
+  tr.boat-item {
+
+    &:hover {
+      .boat-actions {
+        opacity: 1;
+      }
+    }
+
+    .boat-actions {
+      margin-top: 10px;
+      opacity: 0;
+
+      a {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+.boats {
+  background: transparent !important;
+
+  .rubix-panel-container {
+    background: #E9F0F5;
+  }
+
+  .boat-gallery-container {
+    margin-top: 40px;
+  }
+
+  .gallery-view {
+    padding-right: 25px;
+
+    .gallery-item {
+      .boat-name {
+        color: #43525A;
+        text-transform: uppercase;
+      }
+
+      h4.boat-name {
+        min-height: 35px;
+        font-size: 16px;
+      }
+
+      h6.boat-name {
+        min-height: 27px;
+      }
+    }
+  }
+
+  .filter-button-group {
+    button {
+      word-wrap: break-word;
+      white-space: normal;
+      height: auto;
+
+      &.btn:first-child, &.btn:last-child {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+}
+
+.show-boat {
+  .boat-images {
+    overflow: auto;
+    margin-bottom: 40px;
+  }
+
+  .boat-information {
+    h4 {
+      text-align: center;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+  }
+}
+
+.boat-status-label {
+  background-color: #5cb85c;
+  text-transform: uppercase;
+
+  &.yard {
+    background-color: #d9534f;
+  }
+
+  &.in-use {
+    background-color: #f0ad4e;
+  }
+}
+

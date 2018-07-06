@@ -1,0 +1,38 @@
+<div class="inventory">
+  <!--<h1 class="fleet-status"> Fleet Status</h1>-->
+  <!--<div class="guide">Planning your next adventure? Check the feed below, if the status of your chosen is "Dock" it is ready to be reserved</div>-->
+  <div>
+    <table class="table table-bordered table-hover sortable sticky">
+      <thead>
+        <tr>
+          <th class="col-xs-3" data-defaultsort='disabled'>Image</th>
+          <th class="col-xs-4" data-defaultsort="asc">Name</th>
+          <th class="col-xs-3">Class</th>
+          <th class="col-xs-2">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for boat in @boats %>
+          <tr class="boat-item">
+            <td class="text-center"><img class="boat-image" src="<%= boat.primary_image('thumb') %>" /></td>
+            <td><%= boat.name %></td>
+            <td><%= boat.boat_class.name %></td>
+            <td class="text-center">
+              <%= boat_status_tag(boat.status.humanize) %>
+              <div class="boat-actions hidden-xs">
+                <a class="btn-outlined btn btn-info" href="<%= show_boat_embed_pages_path(boat) %>">View Boat</a>
+                <a class="btn-outlined btn btn-primary" target="_blank" href="<%= new_booking_path %>">Book this class</a>
+              </div>
+            </td>
+          </tr>
+          <tr class="visible-xs">
+            <td colspan="4" class="text-center">
+              <a class="btn-outlined btn btn-sm btn-info" href="<%= show_boat_embed_pages_path(boat) %>">View Boat</a>
+              <a class="btn-outlined btn btn-sm btn-primary" target="_blank" href="<%= new_booking_path %>">Book this class</a>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div style="text-align: center">
+  <%= email_image_header %>
+</div>
+<h4>Hi <%= @booking.user.first_name %></h4>
+<p>Just confirming your recent booking with <%=Setting.site_name%>, details of the booking are below:</p>
+<ul>
+  <li>Please note you will be charged for the fuel used on the day you complete your booking. If there are any other required charges such as damage, cleaning or missing equipment these will also be charged on the day of your booking being completed.</li>
+</ul>
+<p>BOOKING DETAILS:</p>
+<p>
+  Booking ID: <%= @booking.id %>
+  <br>
+  Boat Class: <%= @booking.boat_class.name %>
+  <br>
+  Departure Time: <%= @booking.departure_time %>
+  <br>
+  Start & End Date: <%= @booking.start_date %> - <%= @booking.end_date %>
+  <br>
+  Amount: <%= number_to_currency(@booking.booking_amount) %>
+  <br>
+  WA Sale tax: <%= number_to_currency(@booking.booking_amount_of_tax) %>
+  <br>
+  Total: <%= number_to_currency(@booking.booking_amount_after_tax) %>
+</p>
+
+
+<p>We look forward to seeing you.<br>
+  From The Team at <%=Setting.site_name%></p>

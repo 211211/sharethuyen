@@ -1,0 +1,56 @@
+<div class="boats container-fluid">
+  <div class="row text-center">
+    <div class="btn-group filter-button-group visible-xs col-xs-12">
+      <button data-filter="*" type="button" class="btn-darkblue btn-outlined btn btn-default">show all</button>
+      <div class="menu-paleblue dropdown btn-group btn-group-default">
+        <button id="bg-nested-dropdown" role="button" type="button" class="btn-darkblue btn-outlined menu-darkblue dropdown-toggle btn btn-default" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Filter By Class <span class="caret"></span>
+        </button>
+        <ul role="menu" class="menu-paleblue dropdown-menu" aria-labelledby="bg-nested-dropdown">
+          <% for boat_class in @boat_classes %>
+              <li role="presentation">
+                <a role="menuitem" href="#" data-filter=".<%= boat_class.name.parameterize %>"><%= boat_class.name %></a>
+              </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row boat-gallery-container">
+    <div class="btn-group-vertical filter-button-group hidden-xs col-sm-3 col-md-2">
+      <button data-filter="*" type="button" class="btn-darkblue btn-outlined btn btn-default">show all</button>
+      <% for boat_class in @boat_classes %>
+          <button data-filter=".<%= boat_class.name.parameterize %>" type="button" class="btn-darkblue btn-outlined btn btn-default"><%= boat_class.name %></button>
+      <% end %>
+    </div>
+    <div class="col-xs-12 col-sm-9 col-md-10">
+      <div class="gallery-view row">
+        <% for boat in @boats %>
+          <div class="gallery-item col-xs-collapse-right col-md-3 col-sm-4 col-xs-6 <%= boat.boat_class.name.parameterize %>">
+            <div class="rubix-panel-container">
+              <div class="rubix-panel">
+                <div>
+                  <div class="rubix-panel-header">
+                    <div class="container-fluid">
+                      <div class="row">
+                        <div class="col-xs-12" style="padding: 12.5px;">
+                          <a class="gallery-1 gallery-item-link" href="<%= show_boat_embed_pages_path(boat) %>" title="skyline">
+                            <img src="<%= boat.primary_image('thumb') %>" class="img-responsive">
+                          </a>
+                          <div class="text-center">
+                            <h4 class="boat-name hidden-xs" style="text-transform: uppercase;"><%= boat.name %></h4>
+                            <h6 class="boat-name visible-xs" style="text-transform: uppercase;"><%= boat.name %></h6>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

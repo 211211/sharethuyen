@@ -1,0 +1,53 @@
+<div class="show-boat container">
+  <a href="javascript:history.back();">[Go Back]</a>
+
+  <h2><%= @boat.name %></h2>
+  <h4><%= @boat.boat_class.name %></h4>
+
+  <div class="boat-information row">
+    <div class="col-sm-8 boat-images">
+      <div class="feature-image">
+        <img id="feature-image" src="<%= @boat.primary_image %>" class="img-responsive">
+      </div>
+      <div class="thumbs">
+        <!-- thumb navigation carousel items -->
+        <ul class="list-inline">
+          <% for boat_image in @boat.boat_images %>
+              <li class="col-xs-2">
+                <a data-full-image="<%= boat_image.image_url.url %>" href="#">
+                  <img src="<%= boat_image.image_url.thumb.url %>" class="img-responsive">
+                </a>
+              </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-4 col-xs-12">
+      <h4>Details</h4>
+      <ul>
+        <li>Year: <%= @boat.year || 'N/A' %></li>
+        <li>Length: <%= @boat.length || 'N/A' %></li>
+        <li>Engine: <%= @boat.engine || 'N/A' %></li>
+        <li>Comfortably Seats: <%= @boat.seating || 'N/A' %></li>
+        <li>Fuel Capacity: <%= @boat.capacity || 'N/A' %></li>
+        <li>Cruising Speed: <%= @boat.cruising_speed || 'N/A' %></li>
+        <li>USCG capacity: <%= @boat.us_coast_guard_capacity || 'N/A' %></li>
+      </ul>
+    </div>
+  </div>
+  <div class="boat-information row">
+    <div class="col-sm-4 col-xs-12">
+      <h4>Amenities</h4>
+      <ul>
+        <% for amenity in @boat.boat_amenities %>
+          <li><img src="<%= amenity.icon.thumb.url %>" width="15px" height="15px"> - <%= amenity.name %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="col-sm-8 col-xs-12">
+      <h4>Description</h4>
+      <div><%= @boat.description %></div>
+    </div>
+  </div>
+  <a href="javascript:history.back();">[Go Back]</a>
+</div>

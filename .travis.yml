@@ -1,0 +1,52 @@
+dist: trusty
+sudo: required
+language: ruby
+cache:
+  bundler: true
+services:
+- docker
+- postgresql: '9.6'
+- redis-server
+env:
+  COMPOSE_VERSION: 1.8.1
+before_install:
+- openssl aes-256-cbc -K $encrypted_cf68d0986fcb_key -iv $encrypted_cf68d0986fcb_iv
+  -in credentials.tar.gz.enc -out credentials.tar.gz -d
+# If the SDK is not already cached, download it and unpack it
+# Bypasses all user input
+- export CLOUDSDK_CORE_DISABLE_PROMPTS=1
+
+- if [ ! -d ${HOME}/google-cloud-sdk ]; then
+     curl https://sdk.cloud.google.com | bash;
+  fi
+- curl -L https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-`uname
+  -s`-`uname -m` > docker-compose
+- chmod +x docker-compose
+- sudo mv docker-compose /usr/local/bin
+- yarn global add bower
+- yarn install
+- bower install
+before_script:
+- psql -c 'create database travis_ci_test;' -U postgres
+- cp config/database.yml config/database.yml.boatshare
+- cp config/database.yml.travis config/database.yml
+script:
+- RAILS_ENV=test bundle exec rails db:schema:load --trace
+- bundle exec rails db:test:prepare
+- bundle exec rails spec
+- yarn runtest
+after_success:
+- cp config/database.yml.GC config/database.yml
+- tar -xzf credentials.tar.gz
+- mkdir -p lib
+- docker login -u _json_key --password-stdin https://us.gcr.io < client-secret.json
+- if [ "$TRAVIS_BRANCH" == "staging" ]; then yarn run build:prod; cp config/database.yml.GC
+  config/database.yml; docker build -t boatshare .; docker tag boatshare us.gcr.io/seattle-boats/boatshare:staging; docker
+  push us.gcr.io/seattle-boats/boatshare:staging; fi
+- if [ "$TRAVIS_BRANCH" == "production" ]; then yarn run build:prod; cp config/database.yml.GC
+  config/database.yml; docker build -t boatshare .; docker tag boatshare us.gcr.io/seattle-boats/boatshare:production; docker
+  push us.gcr.io/seattle-boats/boatshare:production; fi
+notifications:
+  email:
+  - trannguyentiensu@gmail.com
+  slack: crossdesign:lpcEPoeYik2S5y0p16sFDs3N

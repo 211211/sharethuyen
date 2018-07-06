@@ -1,0 +1,125 @@
+# config/app.yml for rails-settings-cached
+defaults: &defaults
+  season_start_date: '2016-05-29'
+  season_end_date: '2016-09-15'
+  peak_season_start_date: '2016-07-01'
+  peak_season_end_date: '2016-09-01'
+  disabled_user_types: '[]'
+  security_deposit_single_user: 100
+  security_deposit_mid_week_user: 30
+  security_deposit_group_user: 50
+  security_deposit_unlimited_user: 50
+  security_deposit_daily_user: 50
+  membership_single_user: 500
+  membership_mid_week_user: 200
+  membership_group_user: 120
+  membership_unlimited_user: 120
+  membership_daily_user: 120
+  gallon_price: '1.80'
+  endorsement_check_list: '[]'
+  holidays: '[{"name": "Independence Day", "date": "2016-07-04"}]'
+
+  # MESSAGE
+  pending_charge_message: 'Pending charges will be applied upon completion of your booking. These can include fuel, cleaning, damage or issing equipment.'
+  ui_booking_intro: 'This is the example text for booking notice. Please update it in Setting page'
+  ui_booking_hh_intro: 'This is the example text for Happy Hour booking notice. Please update it in Setting page'
+  t_and_c_on_check_out: 'T&C'
+
+  cancellation_policy: ''
+  no_show_cancel_fee_unlimited_msg: 'NO SHOW + CANCEL FEE - UNLIMITED'
+  cancel_fee_unlimited_msg: 'CANCEL FEE - UNLIMITED'
+  no_show_fee_msg: 'NO SHOW FEE'
+
+  lesson_discount_percent: 10
+  sale_tax_percent: 8
+  booking_charge_sale_tax: false
+  fuel_charge_sale_tax: false
+  cleaning_charge_sale_tax: false
+  damage_charge_sale_tax: false
+  other_charge_sale_tax: false
+  security_deposit_charge_sale_tax: false
+  membership_charge_sale_tax: false
+  lesson_charge_sale_tax: false
+  e_commerce_charge_sale_tax: false
+  current_season: 2017
+  tier_1_before_day: 30
+  single_user_renewal_price_tier1: 1000
+  single_user_renewal_message_tier1: 'Message'
+  mid_week_user_renewal_price_tier1: 1000
+  mid_week_user_renewal_message_tier1: 'Message'
+  group_user_renewal_price_tier1: 1000
+  group_user_renewal_message_tier1: 'Message'
+  renewal_discount_percent: 10
+  tier_2_after_day: 30
+  single_user_renewal_price_tier2: 1000
+  single_user_renewal_message_tier2: 'Message'
+  mid_week_user_renewal_price_tier2: 1000
+  mid_week_user_renewal_message_tier2: 'Message'
+  group_user_renewal_price_tier2: 1000
+  group_user_renewal_message_tier2: 'Message'
+  happy_hour_enabled: true
+  default_user_type: 'full'
+  second_booking_depart_from: 930
+
+  # BRANDING
+  branding_color: '#87d1da'
+  logo: '/imgs/app/boatshare-portal-logo.png'
+  background_image: '/img/bg.jpg'
+  email_image: ''
+  site_name: 'Seattle Boat Share'
+  site_email: 'hello@seattleboatshare.com'
+  admin_email: 'hello@seattleboatshare.com'
+  website_url: 'http://seattleboatshare.com/'
+
+  # Booking
+  last_reservation_by_date:
+    monday: 1080
+    tuesday: 1080
+    wednesday: 1080
+    thursday: 1080
+    friday: 1080
+    saturday: 1080
+    sunday: 1080
+
+  # MEMBERSHIP WAITLIST
+  membership_waitlist_enabled: false
+  membership_waitlist_expired_enabled: false
+  membership_waitlist_price: 100
+  membership_waitlist_message: 'Message'
+
+  # EMAIL TEMPLATES
+  email_booking_confirmation_notification_subject: "Booking Confirmation"
+  email_booking_confirmation_notification: ""
+
+  email_booking_reminder_subject: "Upcoming Booking Reminder"
+  email_booking_reminder: ""
+
+  email_booking_completed_notification_subject: "Booking Completed"
+  email_booking_completed_notification: ""
+
+  email_new_charge_notification_subject: "New Charge Notification"
+  email_new_charge_notification: ""
+
+  email_deposit_returned_notification_subject: "Your Security Deposit has been returned"
+  email_deposit_returned_notification: ""
+
+  email_group_invitation_notification_subject: "Group Invitation"
+  email_group_invitation_notification: ""
+
+  email_user_welcome_email_subject: "Welcome to Seattle Boat Share"
+  email_user_welcome_email: ""
+
+  email_membership_waitlist_approved_notification_subject: "Congratulation! Your membership is now available"
+  email_membership_waitlist_approved_notification: ""
+
+  email_new_lesson_notification_subject: "New Lesson Booking"
+  email_new_lesson_notification: ""
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

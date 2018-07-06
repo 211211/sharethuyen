@@ -1,0 +1,111 @@
+/* ADD/REMOVE/CHANGE THEMES HERE */
+
+// Giving the default theme a name
+@include theme-maker("default", (
+        header (
+          bg $bshare-primary-color,
+        ),
+        sidebar (
+          width 220px,
+          bg $bshare-primary-color,
+          avatar (
+            bg #83d0db
+          )
+        ),
+));
+
+.rubix-panel-body {
+  .panel-header {
+    margin-bottom: 20px;
+  }
+}
+
+.bg-light-blue {
+  background: #83d0db;
+}
+
+.bshare-primary-color {
+  color: $bshare-primary-color;
+}
+
+.nav-light-blue > li.active > a,
+.nav-light-blue > rubix-menu > li.active > a,
+.nav-light-blue > rubix-nav-item > li.active > a {
+  background: #83d0db;
+  border-color: #83d0db;
+}
+
+html.default body {
+  #sidebar {
+    #sidebar-container {
+      top: $navbar-height;
+    }
+
+    #avatar {
+      height: $navbar-height;
+
+      img {
+        top: 5px;
+      }
+    }
+  }
+
+  #rubix-nav-header {
+    .navbar-nav {
+      li > a {
+        padding-top: 10px;
+      }
+    }
+  }
+}
+
+.user-side {
+  .nav-pills > li > a,
+  .nav-pills > rubix-nav-item > li > a,
+  .nav-pills > rubix-menu > li > a {
+    background: $bshare-secondary-color;
+    border-color: $bshare-secondary-color;
+    color: $bshare-primary-color;
+    border-radius: 0;
+    margin: 0 7px;
+  }
+
+  .nav-pills > li.active > a,
+  .nav-pills > rubix-nav-item > li.active > a,
+  .nav-pills > rubix-menu > li.active > a {
+    background: $bshare-primary-color;
+    border-color: $bshare-primary-color;
+    color: $bshare-secondary-color;
+  }
+
+  @media (min-width: 990px) {
+    .rubix-panel-body ul[role='tablist'].nav {
+      padding-left: 0;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  .page-title {
+    text-transform: uppercase;
+  }
+
+  .contact-btn {
+    padding-right: 85px !important
+  }
+}
+
+#footer-container {
+  .footer-links ul {
+    margin-bottom: 0px;
+    li {
+      display: inline-block;
+      width: 200px;
+    }
+
+    a{
+      color: $bshare-primary-color;
+      text-transform: uppercase;
+    }
+  }
+}

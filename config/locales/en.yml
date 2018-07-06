@@ -1,0 +1,73 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  hello: "Hello world"
+  down_for_maintenance: "Sorry for the inconvenience but we're performing some maintenance at the moment."
+  booking_reach_limit: 'Sorry you have reached your maximum allocated weekend/holiday bookings. Use one or cancel one and you may book'
+  no_boat_available: 'There is no boat of the class available for booking on selected date!'
+  no_security_deposit: 'Need to pay security deposit first'
+  not_valid_boat_class: 'This user cannot book selected boat class. Please choose another class'
+  booking_out_of_season: 'Booking can only create in season'
+  user_not_active: 'Your account is not active at the moment and you are required to contact SBS to have it re-activated'
+  user_no_payment_method: 'Please add at least one payment method before making a booking!'
+  booking_cancel_successfully: 'Booking was cancelled successfully!'
+  booking_create_successfully: 'Booking was created successfully!'
+  booking_start_successfully: 'Booking was started successfully!'
+  booking_check_in_boat_successfully: 'Boat was checked in successfully!'
+  booking_was_blocked: 'Selected boat class was blocked by admin!'
+  booking_complete_successfully: 'Booking was completed successfully!'
+  booking_image_uploaded_successfully: 'Booking image was uploaded successfully!'
+  stripe_update_default_source_successfully: 'Update default source for customer successfully!'
+  card_payment_update_successfully: 'Your payment detail has been updated and saved successfully!'
+  password_update_successfully: 'Password has been updated successfully!'
+  setting_update_successfully: 'Setting has been updated successfully!'
+  charge_applied_successfully: 'Charge applied successfully!'
+  no_setting_available: 'No setting available'
+  cannot_update_endorsement: 'Cannot update endorsement'
+  update_endorsement_successfully: 'Update endorsement successfully!'
+  reset_password_sent: 'Reset password instructions have been sent.'
+  not_exist_user_by_email: 'User with specified email not exist!'
+  update_membership_successfully: 'Membership information updated successfully!'
+  update_charge_amount_successfully: 'Charge amount updated successfully!'
+  update_charge_discount_percent_successfully: 'Charge discount percent updated successfully!'
+  join_group_successfully: 'You has joined group successfully!'
+  email_not_belong_group: 'Email doesnot belong to group'
+  remove_invitation_out_of_group_successfully: 'Invitation was removed successfully!'
+  user_phone_is_blank: "User's phone is required to create new booking"
+  mid_week_membership_on_weekend: 'Mid week membership cannot create booking on weekend/holiday'
+  membership_charge_not_paid: 'Membership charge need to be paid before create booking'
+  cannot_start_booking_not_today: 'Cannot Start Booking. Booking can only start on Booking Start Date'
+  cannot_change_with_same_amount: 'Cannot change meter with same amount'
+  boat_fuel_cannot_change_remain_fuel_with_same_amount: 'Cannot change remain fuel with same amount'
+  cannot_create_fuel_log_for_charge: 'Cannot create fuel log when creating charge!'
+  fuel_param_is_missing: 'Fuel params is missing'
+  boat_yard_update_failure: 'Cannot update boat status'
+  seafair_one_day_only: 'You are only allowed to book one day during Seafair period!'
+  seafair_one_booking_only: 'You are only allowed to have one booking during Seafair period!'
+  fuel_tank_is_full: 'Fuel tank is full already. Cannot fill up!'
+  sent_confirmation_instructions: 'Confirmation instructions sent. Please check you inbox!'
+  email_not_verified: 'This email hasnot been verified!'
+  membership_waitlist_not_enabled: 'Membership wait list is not enabled'
+  pending_waitlist_new_user_not_empty: 'Pending wailist for new user is not empty!'
+  pending_waitlist_expired_user_not_empty: 'Pending wailist for expired user is not empty!'
+  invalid_addon_quantity: 'Invalid add-on quantity'
+  
